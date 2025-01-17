@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSTRUTOPIA - Tutorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #EFDEBE;
+        }
+
+        header {
+            background: #bd6241;
+            color: white;
+            padding: 48px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 56px;
+            margin-bottom: 16px;
+            letter-spacing: 4px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+
+        .tabs {
+            background: white;
+            border-radius: 15px;
+            padding: 32px;
+            margin-top: 32px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            border-bottom: 2px solid #EFDEBE;
+            padding-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 12px 24px;
+            border: none;
+            background: #EFDEBE;
+            cursor: pointer;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #bd6241;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .tab-button.active {
+            background: #bd6241;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .component-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #bd6241;
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+
+        .highlight-box {
+            background: #EFDEBE;
+            padding: 24px;
+            border-radius: 15px;
+            margin: 24px 0;
+            border-left: 5px solid #bd6241;
+        }
+
+        .highlight-box ul {
+            margin-left: 24px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: #bd6241;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 24px 0;
+            font-weight: 600;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        footer {
+            background: #bd6241;
+            color: white;
+            text-align: center;
+            padding: 32px;
+            margin-top: 48px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 16px;
+            }
+            
+            .product-showcase {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CONSTRUTOPIA</h1>
+            <p>Roll the Dice, Build it Nice!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="introduction">Introduction</button>
+                <button class="tab-button" data-tab="components">Components</button>
+                <button class="tab-button" data-tab="gameplay">Gameplay</button>
+                <button class="tab-button" data-tab="tutorials">Video Tutorials</button>
+                <button class="tab-button" data-tab="challenges">Challenges</button>
+                <button class="tab-button" data-tab="faq">FAQ</button>
+            </div>
+
+            <div id="introduction" class="tab-content active">
+                <h2>Welcome to CONSTRUTOPIA!</h2>
+                <p>A strategic game of chance and building skills.</p>
+                <div class="product-showcase">
+                    <img src="/api/placeholder/300/200" alt="Game Box">
+                    <img src="/api/placeholder/300/200" alt="Gameplay Example">
+                    <img src="/api/placeholder/300/200" alt="Components Display">
+                </div>
+                <div class="highlight-box">
+                    <h3>Quick Overview:</h3>
+                    <ul>
+                        <li>2 Players</li>
+                        <li>4 Dice (2 per player)</li>
+                        <li>26 Building Cards (2 levels)</li>
+                        <li>Multiple Block Shapes</li>
+                        <li>Special Wildcard Mechanics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="components" class="tab-content">
+                <h2>Game Components</h2>
+                <div class="component-images">
+                    <img src="/api/placeholder/200/150" alt="Cubes">
+                    <img src="/api/placeholder/200/150" alt="Cuboids">
+                    <img src="/api/placeholder/200/150" alt="Prisms">
+                    <img src="/api/placeholder/200/150" alt="Arches">
+                    <img src="/api/placeholder/200/150" alt="Semicircles">
+                    <img src="/api/placeholder/200/150" alt="Dice">
+                    <img src="/api/placeholder/200/150" alt="Building Cards">
+                </div>
+            </div>
+
+            <div id="gameplay" class="tab-content">
+                <h2>How to Play</h2>
+                <div class="highlight-box">
+                    <h3>Game Flow:</h3>
+                    <ul>
+                        <li>Both players roll their two dice simultaneously</li>
+                        <li>Each player sums up their dice values</li>
+                        <li>Players select cards based on their dice sums</li>
+                        <li>If both players get the same sum, they must use the wildcard</li>
+                        <li>Players attempt to build the structure shown on their card</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="tutorials" class="tab-content">
+                <h2>Video Tutorials</h2>
+                <div class="product-showcase">
+                    <img src="/api/placeholder/300/200" alt="Getting Started Tutorial">
+                    <img src="/api/placeholder/300/200" alt="Advanced Techniques">
+                    <img src="/api/placeholder/300/200" alt="Pro Tips">
+                </div>
+            </div>
+
+            <div id="challenges" class="tab-content">
+                <h2>Building Challenges</h2>
+                <div class="highlight-box">
+                    <h3>The Tower Challenge</h3>
+                    <p>Build the tallest stable structure using only cubic blocks. Time limit: 5 minutes</p>
+                </div>
+                <div class="highlight-box">
+                    <h3>Bridge Builder</h3>
+                    <p>Create a bridge between two points using arches and prisms. Must support weight of one cube.</p>
+                </div>
+            </div>
+
+            <div id="faq" class="tab-content">
+                <h2>Frequently Asked Questions</h2>
+                <div class="highlight-box">
+                    <h3>What happens if pieces fall during building?</h3>
+                    <p>Players must restart their structure if pieces fall during construction.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="download-button">Download Game Rules PDF</a>
+    </main>
+
+    <footer>
+        <p>© 2025 CONSTRUTOPIA. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
