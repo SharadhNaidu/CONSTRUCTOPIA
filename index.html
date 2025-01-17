@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONSTRUTOPIA - Tutorial</title>
+    <title>CONSTRUCTOPIA</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -17,46 +17,50 @@
             line-height: 1.6;
             color: #333;
             background-color: #EFDEBE;
+            overflow-x: hidden;
         }
 
         header {
             background: #bd6241;
             color: white;
-            padding: 48px;
+            padding: clamp(24px, 5vw, 48px);
             text-align: center;
         }
 
         header h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 56px;
+            font-size: clamp(32px, 6vw, 56px);
             margin-bottom: 16px;
-            letter-spacing: 4px;
+            letter-spacing: clamp(2px, 0.5vw, 4px);
         }
 
         .container {
+            width: 95%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 32px;
+            padding: clamp(16px, 3vw, 32px);
         }
 
         .tabs {
             background: white;
             border-radius: 15px;
-            padding: 32px;
-            margin-top: 32px;
+            padding: clamp(16px, 3vw, 32px);
+            margin-top: clamp(16px, 3vw, 32px);
+            overflow-x: hidden;
         }
 
         .tab-buttons {
             display: flex;
-            gap: 16px;
-            margin-bottom: 32px;
+            gap: clamp(8px, 2vw, 16px);
+            margin-bottom: clamp(16px, 3vw, 32px);
             border-bottom: 2px solid #EFDEBE;
             padding-bottom: 16px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .tab-button {
-            padding: 12px 24px;
+            padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 24px);
             border: none;
             background: #EFDEBE;
             cursor: pointer;
@@ -65,6 +69,8 @@
             color: #bd6241;
             font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
+            font-size: clamp(12px, 2vw, 16px);
+            white-space: nowrap;
         }
 
         .tab-button.active {
@@ -74,7 +80,7 @@
 
         .tab-content {
             display: none;
-            padding: 20px;
+            padding: clamp(10px, 2vw, 20px);
         }
 
         .tab-content.active {
@@ -83,74 +89,111 @@
 
         .product-showcase {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(10px, 2vw, 20px);
+            margin: clamp(15px, 3vw, 30px) 0;
+        }
+
+        .product-showcase img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         .component-images {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: clamp(10px, 2vw, 20px);
+            margin: clamp(10px, 2vw, 20px) 0;
+        }
+
+        .component-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         h2 {
             font-family: 'Orbitron', sans-serif;
             color: #bd6241;
-            font-size: 32px;
-            margin-bottom: 24px;
+            font-size: clamp(24px, 4vw, 32px);
+            margin-bottom: clamp(16px, 3vw, 24px);
         }
 
         .highlight-box {
             background: #EFDEBE;
-            padding: 24px;
+            padding: clamp(16px, 3vw, 24px);
             border-radius: 15px;
-            margin: 24px 0;
+            margin: clamp(16px, 3vw, 24px) 0;
             border-left: 5px solid #bd6241;
         }
 
         .highlight-box ul {
-            margin-left: 24px;
+            margin-left: clamp(16px, 3vw, 24px);
+        }
+
+        .highlight-box h3 {
+            font-size: clamp(16px, 2.5vw, 20px);
+            margin-bottom: 10px;
         }
 
         .download-button {
             display: inline-block;
-            padding: 16px 32px;
+            padding: clamp(12px, 2.5vw, 16px) clamp(24px, 4vw, 32px);
             background: #bd6241;
             color: white;
             text-decoration: none;
             border-radius: 25px;
-            margin: 24px 0;
+            margin: clamp(16px, 3vw, 24px) 0;
             font-weight: 600;
             font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
         }
 
         footer {
             background: #bd6241;
             color: white;
             text-align: center;
-            padding: 32px;
-            margin-top: 48px;
+            padding: clamp(24px, 4vw, 32px);
+            margin-top: clamp(32px, 5vw, 48px);
             font-family: 'Orbitron', sans-serif;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 16px;
+        @media (max-width: 600px) {
+            .tab-buttons {
+                flex-direction: column;
+                align-items: stretch;
             }
-            
-            .product-showcase {
-                grid-template-columns: 1fr;
+
+            .tab-button {
+                width: 100%;
+                text-align: center;
             }
-            
-            header h1 {
-                font-size: 40px;
+
+            .highlight-box {
+                border-left-width: 3px;
+            }
+        }
+
+        @media (hover: hover) {
+            .tab-button:hover {
+                background: #bd6241;
+                color: white;
+                transition: all 0.3s ease;
+            }
+
+            .download-button:hover {
+                background: #a0523a;
+                transform: translateY(-2px);
+                transition: all 0.3s ease;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Rest of the HTML remains the same -->
     <header>
         <div class="container">
             <h1>CONSTRUTOPIA</h1>
@@ -250,7 +293,7 @@
     </main>
 
     <footer>
-        <p>© 2025 CONSTRUTOPIA. All rights reserved.</p>
+        <p>© 2025 CONSTRUCTOPIA. All rights reserved.</p>
     </footer>
 
     <script>
